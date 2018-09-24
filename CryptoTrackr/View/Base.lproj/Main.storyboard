@@ -27,7 +27,7 @@
                                         </constraints>
                                     </imageView>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Zb-rD-Leo">
-                                        <rect key="frame" x="0.0" y="457" width="430" height="200"/>
+                                        <rect key="frame" x="0.0" y="457" width="375" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="Msg-UR-dey"/>
                                         </constraints>
@@ -65,6 +65,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cryptoPicker" destination="3Zb-rD-Leo" id="6vl-re-Vz3"/>
+                        <outlet property="priceLabel" destination="aYW-OA-zgr" id="k74-pt-Cme"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
