@@ -29,6 +29,47 @@ class ViewController: UIViewController {
         cryptoPicker.delegate = self
         cryptoPicker.dataSource = self
     }
+    
+    
+    //MARK: - UIPickerDeletage Method
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if component == 0 {
+            cryptoLabel = crytoData.cryptoArray[row]
+        } else if component == 1 {
+            currencyLabel = crytoData.currencyArray[row]
+            currencySymbol = crytoData.currencySymbolArray[row]
+        }
+        
+        if !cryptoLabel.isEmpty && !currencyLabel.isEmpty {
+            finalURL = baseURL + cryptoLabel + currencyLabel
+            getCryptoData(url: finalURL)
+        } else {
+            //One component missing selection
+        }
+    }
+    
+    //MARK: - Networking
+    func getCryptoData(url: String) {
+        Alamofire.request(url, method: .get)
+            .responseJSON { response in
+                if response.result.isSuccess {
+                    let cryptoJSON : JSON = JSON(response.result.value!)
+                    self.updateCryptoData(json: cryptoJSON)
+                } else {
+                    self.priceLabel.text = "Connection Issues"
+                }
+        }
+    }
+    
+    
+    //MARK: - JSON Parsing
+    func updateCryptoData(json : JSON) {
+        if let cryptoPrice = json["ask"].double {
+            priceLabel.text = currencySymbol + String(format: "%.2f", cryptoPrice)
+        } else {
+            priceLabel.text = "Price Unavailable"
+        }
+    }
 }
 
 
