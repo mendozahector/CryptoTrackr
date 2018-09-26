@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var cryptoPicker: UIPickerView!
     
+    @IBOutlet weak var cryptoLabelView: UILabel!
+    @IBOutlet weak var cryptoImageVIew: UIImageView!
+    
     let crytoData = CryptoData()
     var currencySymbol = ""
     
@@ -55,6 +58,7 @@ class ViewController: UIViewController {
                 if response.result.isSuccess {
                     let cryptoJSON : JSON = JSON(response.result.value!)
                     self.updateCryptoData(json: cryptoJSON)
+                    self.updateUILabels()
                 } else {
                     self.priceLabel.text = "Connection Issues"
                 }
@@ -69,6 +73,40 @@ class ViewController: UIViewController {
         } else {
             priceLabel.text = "Price Unavailable"
         }
+    }
+    
+    
+    //MARK: - Updating UI Labels
+    func updateUILabels() {
+        var name: String = ""
+        var image: String = ""
+        
+        switch cryptoLabel {
+        case "BTC":
+            name = "Bitcoin"
+            image = "bitcoinicon"
+        case "LTC":
+            name = "Litecoin"
+            image = "litecoinicon"
+        case "ETH":
+            name = "Ethereum"
+            image = "ethereumicon"
+        case "ZEC":
+            name = "ZCash"
+            image = "zcashicon"
+        case "XRP":
+            name = "Ripple"
+            image = "rippleicon"
+        case "XMR":
+            name = "Monero"
+            image = "moneroicon"
+        default:
+            name = ""
+            image = ""
+        }
+        
+        cryptoImageVIew.image = UIImage(named: image)
+        cryptoLabelView.text = name
     }
 }
 

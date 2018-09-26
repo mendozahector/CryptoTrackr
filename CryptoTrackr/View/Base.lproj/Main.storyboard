@@ -32,10 +32,38 @@
                                             <constraint firstAttribute="height" constant="200" id="Msg-UR-dey"/>
                                         </constraints>
                                     </pickerView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYW-OA-zgr">
-                                        <rect key="frame" x="0.0" y="220" width="375" height="60"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="RtE-aM-3QE">
+                                        <rect key="frame" x="109.5" y="190" width="156.5" height="50"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1nf-Se-yJA">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="HPu-7g-Qkk"/>
+                                                    <constraint firstAttribute="height" constant="50" id="q9c-M0-Sle"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgg-jM-MOi">
+                                                <rect key="frame" x="65" y="0.0" width="91.5" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="qaa-e9-9m8"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="tvf-mL-evK"/>
+                                            <constraint firstItem="1nf-Se-yJA" firstAttribute="leading" secondItem="RtE-aM-3QE" secondAttribute="leading" id="44v-h0-BYZ"/>
+                                            <constraint firstAttribute="height" constant="50" id="g5N-6E-1G9"/>
+                                            <constraint firstItem="1nf-Se-yJA" firstAttribute="top" secondItem="RtE-aM-3QE" secondAttribute="top" id="ibl-vw-oor"/>
+                                            <constraint firstAttribute="trailing" secondItem="cgg-jM-MOi" secondAttribute="trailing" id="n0k-F9-cBX"/>
+                                            <constraint firstItem="cgg-jM-MOi" firstAttribute="top" secondItem="RtE-aM-3QE" secondAttribute="top" id="zOF-gE-PPC"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYW-OA-zgr">
+                                        <rect key="frame" x="0.0" y="245" width="375" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="xRX-YY-CCW"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="50"/>
                                         <color key="textColor" red="0.94509803921568625" green="0.65490196078431373" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -44,15 +72,17 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.070588235294117646" green="0.52941176470588236" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="aYW-OA-zgr" firstAttribute="leading" secondItem="gdu-up-EYf" secondAttribute="leading" id="0sP-EJ-RYe"/>
                                     <constraint firstAttribute="trailing" secondItem="AsT-D1-MvG" secondAttribute="trailing" id="2io-QZ-0Jt"/>
-                                    <constraint firstItem="aYW-OA-zgr" firstAttribute="leading" secondItem="gdu-up-EYf" secondAttribute="leading" id="4yN-LP-9WF"/>
                                     <constraint firstItem="3Zb-rD-Leo" firstAttribute="leading" secondItem="gdu-up-EYf" secondAttribute="leading" id="A2g-9t-6Z8"/>
                                     <constraint firstAttribute="trailing" secondItem="3Zb-rD-Leo" secondAttribute="trailing" id="AdF-Ws-hyD"/>
-                                    <constraint firstAttribute="trailing" secondItem="aYW-OA-zgr" secondAttribute="trailing" id="CJb-XV-eVh"/>
                                     <constraint firstItem="AsT-D1-MvG" firstAttribute="top" secondItem="gdu-up-EYf" secondAttribute="top" constant="30" id="Ert-jK-DUF"/>
-                                    <constraint firstItem="aYW-OA-zgr" firstAttribute="top" secondItem="AsT-D1-MvG" secondAttribute="bottom" constant="40" id="MDT-TL-rou"/>
+                                    <constraint firstItem="RtE-aM-3QE" firstAttribute="centerX" secondItem="gdu-up-EYf" secondAttribute="centerX" id="FbL-Ql-llV"/>
                                     <constraint firstItem="AsT-D1-MvG" firstAttribute="leading" secondItem="gdu-up-EYf" secondAttribute="leading" id="TgT-9t-jwO"/>
+                                    <constraint firstItem="RtE-aM-3QE" firstAttribute="top" secondItem="AsT-D1-MvG" secondAttribute="bottom" constant="10" id="Y1V-gn-5Ij"/>
                                     <constraint firstAttribute="bottom" secondItem="3Zb-rD-Leo" secondAttribute="bottom" constant="10" id="ZmJ-rE-GbA"/>
+                                    <constraint firstAttribute="trailing" secondItem="aYW-OA-zgr" secondAttribute="trailing" id="e6K-Ew-Umv"/>
+                                    <constraint firstItem="aYW-OA-zgr" firstAttribute="top" secondItem="RtE-aM-3QE" secondAttribute="bottom" constant="5" id="nWq-dL-xaq"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -66,12 +96,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="cryptoImageVIew" destination="1nf-Se-yJA" id="gED-Cl-UGO"/>
+                        <outlet property="cryptoLabelView" destination="cgg-jM-MOi" id="Cdr-In-LuM"/>
                         <outlet property="cryptoPicker" destination="3Zb-rD-Leo" id="6vl-re-Vz3"/>
                         <outlet property="priceLabel" destination="aYW-OA-zgr" id="k74-pt-Cme"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
         </scene>
     </scenes>
     <resources>
